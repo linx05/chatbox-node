@@ -1,0 +1,48 @@
+{
+  "name": "chatbox-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "prettier --single-quote \"src/**/*.js\"",
+    "lint:fix": "prettier --single-quote --write \"src/**/*.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linx05/chatbox-node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/linx05/chatbox-node/issues"
+  },
+  "homepage": "https://github.com/linx05/chatbox-node#readme",
+  "dependencies": {
+    "api-query-params": "^4.13.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "connect": "^3.7.0",
+    "connect-roles": "^3.1.2",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "jwt-simple": "^0.5.6",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.6.0",
+    "mongoose-id-validator": "^0.5.3",
+    "mongoose-unique-validator": "^2.0.3",
+    "nodemon": "^1.19.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "socket.io": "^2.2.0",
+    "socketio-jwt": "^4.5.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  }
+}
