@@ -133,6 +133,7 @@ function findUsers(query) {
         path: 'user',
         select: 'active _id name username'
       })
+      .cache(30)
       .select('_id user status last_connect')
       .exec((err, data) => {
         if (err) {

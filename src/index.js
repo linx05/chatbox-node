@@ -1,5 +1,6 @@
 process.env.TZ = 'America/Hermosillo';
 const bodyParser = require('body-parser');
+const cachegoose = require('cachegoose');
 global.express = require('express');
 global.config = require('./config/environment');
 global.mongoose = require('mongoose');
@@ -8,6 +9,10 @@ const cors = require('cors');
 let auth = require('./services/auth/passport-jwt')();
 // Use native promises for mongoose
 mongoose.Promise = global.Promise;
+
+cachegoose(mongoose, {
+  host: 'localhost',
+});
 
 // Connect to database
 mongoose.connect(config.mongo.uri, config.mongo.options);
