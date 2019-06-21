@@ -1,5 +1,4 @@
 const User = require('./user.model').User;
-const UserSchema = require('./user.model').UserSchema;
 const passwordService = require('../../services/password/password.service');
 const resourceService = require('../../services/resource/resource.service');
 
