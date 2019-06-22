@@ -2,12 +2,16 @@
 
 ## **Endpoints**
 
-> All the endpoints with a 🔐 require authentication. To authenticate you need to make request with a header called `Authorization`, which value is `Bearer {YOUR_JWT_GOES HERE}`.
+> All the endpoints with a 🔐 require authentication. To authenticate you need to make the request with a header called `Authorization`, which value is `Bearer {YOUR_JWT_GOES HERE}`.
 
-### Users
+---
+
+### _Users_
 
 - **POST** `/api/users`
+
   > Creates a new user
+
   ```json
   {
     "username": "username",
@@ -16,7 +20,12 @@
   }
   ```
 
-### Authentication
+- 🔐 **GET** `/api/users/all`
+  > This will return all the registered users
+
+---
+
+### _Authentication_
 
 - **POST** `/api/auth/token`
 
@@ -29,10 +38,9 @@
   }
   ```
 
-- 🔐 **GET** `/api/users/all`
-  > This will return all the registered users
+---
 
-### Chat
+### _Chat_
 
 - 🔐 **GET** `/api/chats/connect`
 
@@ -54,3 +62,5 @@
     "data": "A message" // The message
   }
   ```
+
+---
