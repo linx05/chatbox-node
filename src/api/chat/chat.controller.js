@@ -6,18 +6,14 @@ const { UserStatus, USER_STATUSES } = require('./status.model');
 function getConversation(req, res) {
   const query = aqp(req.query);
 
-  const conversationId = req.params.id;
+  const otherUserId = req.params.id;
 
   if (req.query.user && !mongoose.Types.ObjectId.isValid(req.query.user)) {
     return handleError(res, 'No valid user', 422);
   }
 
-  const filter = conversationId
-    ? {
-        _id: conversationId
-      }
-    : {
-        users: { $all: [req.user.id, mongoose.Types.ObjectId(req.query.user)] }
+  const filter = {
+        users: { $all: [req.user.id, mongoose.Types.ObjectId(otherUserId)] }
       };
   // Default query parameters
   query.sort = query.sort || '-date';
@@ -144,7 +140,7 @@ function findUsers(query) {
   });
 }
 
-function handleError(res, err, code = 500) {
+function handleError(res, err, code = 422) {
   return res.status(code).send(err);
 }
 

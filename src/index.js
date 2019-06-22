@@ -26,6 +26,7 @@ mongoose.connection.on('error', function(err) {
 const app = express();
 
 //enable CORS for our app
+app.options('*', cors()); // include before other routes
 app.use(cors());
 //Add passport to application
 app.use(auth.initialize());
