@@ -106,9 +106,11 @@
   - Parameter to sort by `message` property.
   - Can be appended with `-` to sort by descending.
   - Default to `-date`.
+
 `skip`:
   - Parameter to skip certain amount of records.
   - Defaults to none.
+
 `limit`:
   - Parameter to limit number or results.
   - Defaults to `100`.
