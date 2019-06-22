@@ -4,7 +4,6 @@ const router = express.Router();
 const accountMiddleware = require('../../middleware/account.middleware');
 
 router.get('/', auth.authenticate(), accountMiddleware.index, controller.index);
-router.get('/all', auth.authenticate(), controller.index);
 router.get(
   '/:id',
   auth.authenticate(),

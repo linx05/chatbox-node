@@ -62,9 +62,6 @@
   }
   ```
 
-- 🔐 **GET** `/api/users/all`
-  > This will return all the registered users
-
 ---
 
 ### _Authentication_

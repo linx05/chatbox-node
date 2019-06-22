@@ -2,13 +2,6 @@ const User = require('./user.model').User;
 const passwordService = require('../../services/password/password.service');
 const resourceService = require('../../services/resource/resource.service');
 
-function index(req, res) {
-  resourceService
-    .get(User, req.query)
-    .then(users => res.status(200).json(users))
-    .catch(error => handleError(res, error));
-}
-
 function show(req, res) {
   resourceService
     .find(User, req.params.id)
@@ -75,7 +68,6 @@ function handleCreateLocalAccountRequest(req) {
 }
 
 module.exports = {
-  index,
   show,
   createLocalAccount,
   update,
