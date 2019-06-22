@@ -21,7 +21,7 @@ function getConversation(req, res) {
       };
   // Default query parameters
   query.sort = query.sort || '-date';
-  query.limit = query.limit || 10;
+  query.limit = query.limit || 100;
 
   Message.find(filter)
     .skip(query.skip)
