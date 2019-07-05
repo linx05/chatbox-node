@@ -61,6 +61,10 @@
     "password": "password"
   }
   ```
+  
+- 🔐 **GET** `/api/users`
+
+> Returns a list of users and their status
 
 ---
 

@@ -49,6 +49,17 @@ function handleUpdateRequest(req) {
   return req;
 }
 
+function getUsers(req, res) {
+  User.find({})
+    .exec()
+    .then(users => {
+      res.status(200).json(users)
+    })
+    .catch(error => {
+      handleError(res, error)
+    });
+}
+
 function search(req, res) {
   resourceService
     .search(User, req.query)
@@ -72,5 +83,6 @@ module.exports = {
   createLocalAccount,
   update,
   destroy,
-  search
+  search,
+  getUsers,
 };

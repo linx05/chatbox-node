@@ -10,6 +10,7 @@ router.get(
   controller.show
 );
 router.get('/search', auth.authenticate(), controller.search);
+router.get('/', auth.authenticate(), controller.getUsers);
 router.post('/', controller.createLocalAccount);
 router.put('/:id', auth.authenticate(), controller.update);
 router.patch('/:id', auth.authenticate(), controller.update);
